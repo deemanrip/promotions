@@ -93,3 +93,8 @@ Done
 - **Main deliverable is the code for the app including usage instructions, ideally in a repo/github gist.**
 
 Done
+
+# PS
+Some TODOs to consider for which there was not enough time:
+- Move hosts, credentials, etc. to configs (e.g. some config file)
+- Unit tests. However, application doesn't have any processing logic to test - it just reads and inserts data.

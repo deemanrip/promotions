@@ -7,6 +7,7 @@ import (
 	"github.com/deemanrip/promotions/repository"
 	"github.com/google/uuid"
 	"github.com/shopspring/decimal"
+	log "github.com/sirupsen/logrus"
 )
 
 const promotionQuery = "SELECT * FROM promotions.promotions where id = '%v'"
@@ -28,6 +29,9 @@ func GetPromotionById(promotionId *string) (*dto.Promotion, error) {
 			return nil, err
 		}
 		return &dto.Promotion{Id: id, Price: price, ExpirationDate: expirationDate}, nil
+	}
+	if closeErr := rows.Close(); closeErr != nil {
+		log.Error(closeErr)
 	}
 
 	return nil, nil
