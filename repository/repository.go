@@ -15,7 +15,7 @@ var ClickhouseConnection driver.Conn
 func Init() {
 	dialCount := 0
 	conn, clickErr := clickhouse.Open(&clickhouse.Options{
-		Addr: []string{"localhost:9002"},
+		Addr: []string{"clickhouse:9000"},
 		Auth: clickhouse.Auth{
 			Database: "promotions",
 			Username: "app",

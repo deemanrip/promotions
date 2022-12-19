@@ -33,17 +33,17 @@ services:
       - promotions-network
     volumes:
       - datasource-volume:/var/lib/clickhouse
-#  promotions_app:
-#    build:
-#      context: ..
-#      dockerfile: ./docker-compose/promotions-app/Dockerfile
-#    container_name: promotions_app
-#    ports:
-#      - "8080:8080"
-#    networks:
-#      - promotions-network
-#    depends_on:
-#      - clickhouse
+  promotions_app:
+    build:
+      context: ..
+      dockerfile: ./docker-compose/promotions-app/Dockerfile
+    container_name: promotions_app
+    ports:
+      - "8080:8080"
+    networks:
+      - promotions-network
+    depends_on:
+      - clickhouse
 networks:
   promotions-network:
 volumes:

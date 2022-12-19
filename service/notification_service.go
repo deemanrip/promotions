@@ -22,7 +22,7 @@ const exchangeTablesQuery = "EXCHANGE TABLES promotions.promotions_tmp AND promo
 const truncateQuery = "TRUNCATE TABLE IF EXISTS promotions.promotions_tmp"
 
 func CreateClient() *minio.Client {
-	minioClient, err := minio.New("localhost:9000", &minio.Options{
+	minioClient, err := minio.New("object-storage:9000", &minio.Options{
 		Creds:  credentials.NewStaticV4("app", "test12345", ""),
 		Secure: false,
 	})
