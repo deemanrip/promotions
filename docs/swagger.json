@@ -1,0 +1,56 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/promotions/{id}": {
+            "get": {
+                "description": "Returns promotion by id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Get promotion by id"
+                ],
+                "summary": "Returns promotion by id",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "uuid",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/dto.Promotion"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "dto.Promotion": {
+            "type": "object",
+            "properties": {
+                "expiration_date": {
+                    "type": "string",
+                    "example": "2018-08-10 12:47:53 +0200 CEST"
+                },
+                "id": {
+                    "type": "string",
+                    "example": "d9433531-5b0a-431d-82d4-b413dc34253f"
+                },
+                "price": {
+                    "type": "number",
+                    "example": 32.180885
+                }
+            }
+        }
+    }
+}

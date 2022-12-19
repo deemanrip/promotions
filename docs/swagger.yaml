@@ -1,0 +1,36 @@
+definitions:
+  dto.Promotion:
+    properties:
+      expiration_date:
+        example: 2018-08-10 12:47:53 +0200 CEST
+        type: string
+      id:
+        example: d9433531-5b0a-431d-82d4-b413dc34253f
+        type: string
+      price:
+        example: 32.180885
+        type: number
+    type: object
+info:
+  contact: {}
+paths:
+  /promotions/{id}:
+    get:
+      description: Returns promotion by id
+      parameters:
+      - description: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.Promotion'
+      summary: Returns promotion by id
+      tags:
+      - Get promotion by id
+swagger: "2.0"
